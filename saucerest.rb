@@ -24,31 +24,31 @@ module SauceREST
       resp_json = @resource[@@roots[type]].post(doc_json,
                                                 :content_type =>
                                                 'application/octet-stream')
-      resp = JSON.parse resp_json
+      resp = JSON.parse resp_json.body
       return resp
     end
 
     def get type, docid
       resp_json = @resource[@@roots[type] + '/' + docid].get
-      resp = JSON.parse resp_json
+      resp = JSON.parse resp_json.body
       return resp
     end
 
     def attach docid, name, data
       resp_json = @resource[@@roots[:script] + '/' + docid + '/' + name].put data
-      resp = JSON.parse resp_json
+      resp = JSON.parse resp_json.body
       return resp
     end
 
     def delete type, docid
       resp_json = @resource[@@roots[type] + '/' + docid].delete
-      resp = JSON.parse resp_json
+      resp = JSON.parse resp_json.body
       return resp
     end
 
     def list type
       resp_json = @resource[@@roots[type] + '/'].get
-      resp = JSON.parse resp_json
+      resp = JSON.parse resp_json.body
       return resp
     end
   end
