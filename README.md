@@ -12,6 +12,7 @@ For the scripts to run, you need to first install:
 * net-ssh
 * net-ssh-gateway
 * rest-client
+* json
 
 
 Here are some useful command line tools:
